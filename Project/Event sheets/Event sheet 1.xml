@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 1</name>
+    <events>
+        <variable constant="0" name="isHooked" sid="3914506845005024" static="0" type="number">0</variable>
+        <variable constant="0" name="isShot" sid="9266229445760541" static="0" type="number">0</variable>
+        <event-block any="1" sid="7312831993650654">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="5536367123647012" type="Keyboard">
+                    <param id="0" name="Key">37 (Left arrow)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" sid="8253127337986428" type="player">
+                    <param id="0" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block any="1" sid="1895448915888037">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="3681653459536547" type="Keyboard">
+                    <param id="0" name="Key">39 (Right arrow)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" sid="3164876548489922" type="player">
+                    <param id="0" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5886069152939223">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="9314009828507115" type="player">
+                    <param id="0" name="Object">key</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" sid="3975785814156347" type="door">
+                    <param id="0" name="Instance variable">Open</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="4345088585119581" type="key" />
+                <action id="0" name="Play" sid="5399600304217463" type="Audio">
+                    <param id="0" name="Audio file">Batman intro (1966)</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">2</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4472237092344081">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="6875769239819167" type="door">
+                    <param id="0" name="Object">player</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="4698837836144626" type="door">
+                    <param id="0" name="Instance variable">Open</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="8503258664298371" type="Sprite7">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4847822119115584">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="1187343125351593" type="System" />
+            </conditions>
+            <actions />
+        </event-block>
+        <event-block sid="369136909632153">
+            <conditions>
+                <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="7378826978666832" type="enemy2">
+                    <param id="0" name="Object">player</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Pathfinding" disabled="1" id="0" name="Find path" sid="323432186077504" type="enemy2">
+                    <param id="0" name="X">player.X</param>
+                    <param id="1" name="Y">enemy2.Y</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="9728971308869237">
+                    <conditions>
+                        <condition behavior="Pathfinding" id="1" name="On failed to find path" sid="267315359010059" type="enemy2" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Pathfinding" disabled="1" id="0" name="Find path" sid="6613943542175864" type="enemy2">
+                            <param id="0" name="X">player.X</param>
+                            <param id="1" name="Y">enemy2.Y</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="7966272515272323">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="8266961851595616" type="System">
+                    <param id="0" name="Interval (seconds)">0.5</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Pathfinding" disabled="1" id="1" name="Move along path" sid="2943511849623855" type="enemy2" />
+            </actions>
+        </event-block>
+        <event-block sid="9193958770650494">
+            <conditions>
+                <condition id="2" name="Mouse button is down" sid="87882315837018" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="8172632216913306" type="System">
+                    <param id="0" name="Variable">isShot</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="8334316838599093" type="System">
+                    <param id="0" name="Variable">isShot</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="52338458324573" type="player">
+                    <param id="0" name="Object">BordaCorda</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="4703534539610174" type="player">
+                    <param id="0" name="Object">rope</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-22" name="Set angle toward position" sid="9864003453662153" type="BordaCorda">
+                    <param id="0" name="X">Mouse.X</param>
+                    <param id="1" name="Y">Mouse.Y</param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" sid="57094528013113" type="rope">
+                    <param id="0" name="Pin to">player</param>
+                    <param id="1" name="Mode">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7454337771214697">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="2331788926689028" type="System" />
+            </conditions>
+            <actions>
+                <action id="-22" name="Set angle toward position" sid="5671192578391746" type="rope">
+                    <param id="0" name="X">BordaCorda.X</param>
+                    <param id="1" name="Y">BordaCorda.Y</param>
+                </action>
+                <action id="-5" name="Set width" sid="4143591010705843" type="rope">
+                    <param id="0" name="Width">distance(player.X,player.Y,BordaCorda.ImagePointX(1),BordaCorda.ImagePointY(1))  + 60*dt</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2285788067751831">
+            <conditions>
+                <condition id="3" name="On button released" sid="9891765114122447" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="1416416782615029" type="System">
+                    <param id="0" name="Variable">isHooked</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="1255214628523449" type="System">
+                    <param id="0" name="Variable">isShot</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="5098383033852513" type="rope" />
+                <action id="-9" name="Destroy" sid="6337986992535416" type="BordaCorda" />
+            </actions>
+        </event-block>
+        <event-block sid="3458606222878173">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="7004973411145548" type="BordaCorda">
+                    <param id="0" name="Object">hookTarget</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Bullet" id="0" name="Set speed" sid="456405359278054" type="BordaCorda">
+                    <param id="0" name="Speed">0</param>
+                </action>
+                <action behavior="Bullet" id="2" name="Set gravity" sid="5014776037438751" type="BordaCorda">
+                    <param id="0" name="Gravity">0</param>
+                </action>
+                <action behavior="Bullet" id="1" name="Set acceleration" sid="5113668873129172" type="BordaCorda">
+                    <param id="0" name="Acceleration">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="8796612855680401" type="System">
+                    <param id="0" name="Variable">isHooked</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3127936886174957">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="4473989630093681" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="5729508717165192" type="BordaCorda" />
+                <action id="-9" name="Destroy" sid="5773237411040486" type="rope" />
+            </actions>
+        </event-block>
+        <event-block sid="1970684833195119">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="115954097912001" type="System">
+                    <param id="0" name="Variable">isHooked</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Physics" id="1" name="Apply force towards position" sid="1616324439413535" type="player">
+                    <param id="0" name="Force">50</param>
+                    <param id="1" name="X">BordaCorda.X</param>
+                    <param id="2" name="Y">BordaCorda.Y</param>
+                    <param id="3" name="Image point">0</param>
+                </action>
+                <action behavior="Platform" id="11" name="Set enabled" sid="4974996680284287" type="player">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action behavior="Physics" id="27" name="Set enabled" sid="7047659626908146" type="player">
+                    <param id="0" name="Mode">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1142407988694684">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="3094940074675107" type="System">
+                    <param id="0" name="Variable">isHooked</param>
+                    <param id="1" name="Comparison">1</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="11" name="Set enabled" sid="5480254663323094" type="player">
+                    <param id="0" name="State">1</param>
+                </action>
+                <action behavior="Physics" id="27" name="Set enabled" sid="3073506319099901" type="player">
+                    <param id="0" name="Mode">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4146801330265672">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="8879485975508191" type="player">
+                    <param id="0" name="Object">hookStop</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="11" name="Set enabled" sid="4700581829207879" type="player">
+                    <param id="0" name="State">1</param>
+                </action>
+                <action behavior="Physics" id="1" name="Apply force towards position" sid="331645913348293" type="player">
+                    <param id="0" name="Force">100</param>
+                    <param id="1" name="X">hookStop.X</param>
+                    <param id="2" name="Y">hookStop.Y</param>
+                    <param id="3" name="Image point">0</param>
+                </action>
+                <action disabled="1" id="-3" name="Set position" sid="2075009035529435" type="player">
+                    <param id="0" name="X">hookStop.X</param>
+                    <param id="1" name="Y">hookStop.Y</param>
+                </action>
+                <action behavior="Physics" id="27" name="Set enabled" sid="8961129527325275" type="player">
+                    <param id="0" name="Mode">0</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

@@ -1,0 +1,433 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>Batatman</name>
+    <description>The adventure of Batatman! - A aventura de Batatman!</description>
+    <version>alpha-4.5</version>
+    <author>Gabriel de Souza, José Carlos, Talita Canadinhas</author>
+    <author-email>cladangab@gmail.com</author-email>
+    <author-website>http://github.com/Gabriel-de-Souza</author-website>
+    <app-id>com.mycompany.myapp</app-id>
+    <unique-id>3or8f1rq8ffb</unique-id>
+    <saved-with-version>21202</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="LOS" version="1">Line Of Sight</behavior>
+        <behavior author="Scirra" id="Pathfinding" version="1">Pathfinding</behavior>
+        <behavior author="Scirra" id="Physics" version="1">Physics</behavior>
+        <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
+        <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
+        <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
+        <behavior author="Scirra" id="jumpthru" version="1">Jump-thru</behavior>
+        <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
+    </used-behaviors>
+    <used-effects />
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>854</width>
+        <height>480</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">Yes</prop>
+        <prop name="Downscaling">Medium quality</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Fullscreen scaling">High quality</prop>
+        <prop name="Loader style">Progress bar &amp; logo</prop>
+        <prop name="Orientations">Any</prop>
+        <prop name="Pause on unfocus">No</prop>
+        <prop name="Physics engine">Box2D asm.js</prop>
+        <prop name="Preload sounds">Yes</prop>
+        <prop name="Preview browser">(default)</prop>
+        <prop name="Sampling">Linear</prop>
+        <prop name="Use high-DPI display">Yes</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-type name="player" sid="3359774701676701">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Platform" sid="5333301414487911">
+                    <behavior id="Platform" />
+                </behavior-type>
+                <behavior-type name="ScrollTo" sid="158656129135943">
+                    <behavior id="scrollto" />
+                </behavior-type>
+                <behavior-type name="Physics" sid="9327170336199134">
+                    <behavior id="Physics" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1581804488419928" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\talita.santos\Downloads\batatman.png">
+                        <collision-poly>
+                            <point x="0.514337" y="0" />
+                            <point x="0.865592" y="0" />
+                            <point x="1" y="0.993243" />
+                            <point x="0.535842" y="1" />
+                            <point x="0.356631" y="0.778716" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TiledBackground" sid="5866228196391734">
+            <plugin id="TiledBg" />
+            <texture original-source="C:\Users\Talita\Documents\000 ESCOLA\BatatmanConcept\tittleBG.png" />
+        </object-type>
+        <object-type name="fixedPlataform" sid="4522850127916491">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="6872987848609662">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9389156559372547" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.617021" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Keyboard" sid="5283029247717487">
+            <plugin id="Keyboard" />
+        </object-type>
+        <object-type name="upDownPlataform" sid="9027615869253475">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Sine" sid="8334164850819533">
+                    <behavior id="Sin" />
+                </behavior-type>
+                <behavior-type name="Jumpthru" sid="33602036987785">
+                    <behavior id="jumpthru" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7383288877425039" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.555556" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="door" sid="5267876410701556">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="Open" sid="7655365849096123" type="boolean" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4117764755933782" speed="5">
+                    <frame duration="1" hotspotX="0.477273" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="key" sid="1606270622204497">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2617266829039188" speed="5">
+                    <frame duration="1" hotspotX="0.292683" hotspotY="0.42132" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Audio" sid="1150502879501912">
+            <plugin id="Audio" />
+        </object-type>
+        <object-type name="enemy1" sid="8316763565386058">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="movement" sid="6782007402546865" type="string" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Platform" sid="6210174985481884">
+                    <behavior id="Platform" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="69541019556868" speed="5">
+                    <frame duration="1" hotspotX="0.501449" hotspotY="0.5" original-source="C:\Users\talita.santos\Downloads\enemy1.1.png">
+                        <collision-poly>
+                            <point x="0.202899" y="0.204678" />
+                            <point x="0.498551" y="0.00292398" />
+                            <point x="0.802899" y="0.19883" />
+                            <point x="0.846377" y="0.5" />
+                            <point x="0.733333" y="0.730994" />
+                            <point x="0.498551" y="0.748538" />
+                            <point x="0.266667" y="0.730994" />
+                            <point x="0.165217" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="enemy2" sid="8996086249124418">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="movement" sid="4490603203920546" type="string" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="LineOfSight" sid="1394567094237862">
+                    <behavior id="LOS" />
+                </behavior-type>
+                <behavior-type name="Pathfinding" sid="2271636094148717">
+                    <behavior id="Pathfinding" />
+                </behavior-type>
+                <behavior-type name="Platform" sid="1974741132228814">
+                    <behavior id="Platform" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6928183555023319" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\talita.santos\Downloads\enemy1.2.png">
+                        <collision-poly>
+                            <point x="0.0566667" y="0.0661765" />
+                            <point x="0.5" y="0.00367647" />
+                            <point x="0.97" y="0.0367647" />
+                            <point x="0.996667" y="0.5" />
+                            <point x="0.946667" y="0.9375" />
+                            <point x="0.5" y="0.992647" />
+                            <point x="0.0133333" y="0.981618" />
+                            <point x="0.00333333" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite2" sid="6306079281116071">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2494346952843738" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="enemy2Edge" sid="2366357639523714">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8691370550791281" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="enemy1Edge" sid="4004949406932592">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2014766620702118" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite" sid="6133092631181768">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5485862672840993" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite3" sid="3122213618077978">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7961445596238627" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Talita\Documents\000 ESCOLA\BatatmanConcept\tittleBG.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TiledBackground2" sid="9553419890325272">
+            <plugin id="TiledBg" />
+            <texture original-source="C:\Users\Talita\Documents\000 ESCOLA\BatatmanConcept\tittleBG.png" />
+        </object-type>
+        <object-type name="Sprite4" sid="5005959689124495">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1453629884807375" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.507246" original-source="C:\Users\Talita\Documents\000 ESCOLA\BatatmanConcept\tittleBG.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite5" sid="2141431730714889">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1703548713005545" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Talita\Documents\000 ESCOLA\BatatmanConcept\tittleBG.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite6" sid="7350096360616688">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8586193808153241" speed="5">
+                    <frame duration="1" hotspotX="0.506667" hotspotY="0.5" original-source="C:\Users\Talita\Documents\000 ESCOLA\BatatmanConcept\tittleBG.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TiledBackground3" sid="9448955929456971">
+            <plugin id="TiledBg" />
+            <texture original-source="C:\Users\Talita\Documents\000 ESCOLA\BatatmanConcept\tittleBG.png" />
+        </object-type>
+        <object-type name="jumpThruPlataform" sid="8211445525895483">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Jumpthru" sid="1799397263358521">
+                    <behavior id="jumpthru" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2528464370902509" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.660714" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Text" sid="7514495519730438">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Sprite7" sid="1868304802980679">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2977173793459196" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="fixedPlataform2" sid="6099558865246655">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="6544220247080352">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2550177934439884" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.617021" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite8" sid="5627154039188182">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Jumpthru" sid="2212002947757536">
+                    <behavior id="jumpthru" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3298662892582714" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite9" sid="1076257612715787">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="1449752884616082">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3452952752867481" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Mouse" sid="109415946758471">
+            <plugin id="Mouse" />
+        </object-type>
+        <object-type name="BordaCorda" sid="3887264520729227">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="2868262038129428">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8069006453691739" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Gabriel\Desktop\BordaCorda.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="rope" sid="8905824537063893">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Pin" sid="4694497616592929">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8080542394761088" speed="5">
+                    <frame duration="1" hotspotX="-0.00398406" hotspotY="0.5" original-source="C:\Users\Gabriel\Desktop\rope.png">
+                        <collision-poly>
+                            <point x="0.0159363" y="0.0909091" />
+                            <point x="0.498008" y="0.0227273" />
+                            <point x="0.996016" y="0.0227273" />
+                            <point x="0.996016" y="0.977273" />
+                            <point x="0.00398406" y="0.977273" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="hookTarget" sid="6943015535218609">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7481540685089827" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Gabriel\Desktop\hookTarget.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="hookStop" sid="5392539647527894">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1275855546748372" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+    </object-folder>
+    <families />
+    <layout-folder>
+        <layout>Layout 1.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>Event sheet 1.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Keyboard" uid="6" />
+        <global-instance type="Audio" uid="12">
+            <properties>
+                <timescale-audio>Off</timescale-audio>
+                <saveload>All</saveload>
+                <play-in-background>No</play-in-background>
+                <positioned-audio></positioned-audio>
+                <panning-model>HRTF</panning-model>
+                <distance-model>Inverse</distance-model>
+                <listener-z-height>600</listener-z-height>
+                <reference-distance>600</reference-distance>
+                <maximum-distance>10000</maximum-distance>
+                <roll-off-factor>1</roll-off-factor>
+            </properties>
+        </global-instance>
+        <global-instance type="Mouse" uid="24" />
+    </global-instances>
+    <sounds-folder>
+        <file name="Batman intro (1966).m4a" />
+        <file name="Batman intro (1966).ogg" />
+    </sounds-folder>
+    <music-folder />
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+    </files-folder>
+</c2project>
